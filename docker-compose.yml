@@ -1,0 +1,37 @@
+name: minilysis
+
+services:
+  back:
+    build: ./back
+    container_name: minilysis-back
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/mydatabase
+    volumes:
+      - ./back:/app
+    networks:
+      - app_network
+
+  db:
+    image: postgres:17.4-alpine
+    container_name: minilysis-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+volumes:
+  pgdata:
+
+networks:
+  app_network:
