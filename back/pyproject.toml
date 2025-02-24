@@ -9,3 +9,8 @@ dependencies = [
     "fastapi[standard]>=0.115.8",
     "tortoise-orm[asyncpg]>=0.24.0",
 ]
+
+[tool.aerich]
+tortoise_orm = "db.session.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."
