@@ -1,7 +1,8 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
-from .db.session import close_db, init_db
+from db.session import close_db, init_db
+from api.endpoints.user import router as user_router
 
 
 @asynccontextmanager
@@ -12,6 +13,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+app.include_router(user_router)
 
 
 @app.get("/")

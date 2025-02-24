@@ -1,5 +1,7 @@
 from tortoise import Tortoise
 
+from models.user import User
+
 
 TORTOISE_ORM = {
     "connections": {
@@ -16,6 +18,9 @@ TORTOISE_ORM = {
 
 async def init_db():
     await Tortoise.init(config=TORTOISE_ORM)
+    await User.create(username="admin", email="admin@mail.com")
+    await User.create(username="Mika", email="mika@mail.com")
+    await User.create(username="Romain", email="romain@mail.com")
 
 
 async def close_db():
