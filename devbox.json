@@ -13,8 +13,7 @@
   },
   "shell": {
     "init_hook": [
-      "uv sync --project ${BACK_DIR}",
-      "source ${VENV_DIR}/bin/activate"
+      "uv sync --project ${BACK_DIR}"
     ]
   }
 }
