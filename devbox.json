@@ -7,13 +7,13 @@
     "pnpm@latest"
   ],
   "env": {
-    "VENV_DIR": "${PWD}/back/.venv",
+    "BACK_DIR": "${PWD}/back",
+    "VENV_DIR": "${BACK_DIR}/.venv",
     "UV_PYTHON": "${DEVBOX_PACKAGES_DIR}/bin/python3.13"
   },
   "shell": {
     "init_hook": [
-      "cd back && uv sync",
-      "source ${VENV_DIR}/bin/activate"
+      "uv sync --project ${BACK_DIR}"
     ]
   }
 }
