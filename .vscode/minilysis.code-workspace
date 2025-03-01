@@ -9,6 +9,13 @@
         "args": ["-c", "devbox shell"]
       },
     },
+    "terminal.integrated.profiles.linux": {
+      "devshell": {
+        "path": "bash",
+        "args": ["-c", "devbox shell"]
+      },
+    },
     "terminal.integrated.defaultProfile.osx": "devshell",
+    "terminal.integrated.defaultProfile.linux": "devshell",
   }
 }
