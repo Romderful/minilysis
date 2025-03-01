@@ -8,13 +8,11 @@
   ],
   "env": {
     "VENV_DIR": "${PWD}/back/.venv",
-    "PYTHON_BIN": "${PWD}/.devbox/nix/profile/default/bin/python3.13"
+    "UV_PYTHON": "${DEVBOX_PACKAGES_DIR}/bin/python3.13"
   },
   "shell": {
     "init_hook": [
-      "rm -rf ${VENV_DIR} || true",
-      "uv venv --python ${PYTHON_BIN} ${VENV_DIR}",
-      "cd back && uv sync --python ${VENV_DIR}/bin/python",
+      "cd back && uv sync",
       "source ${VENV_DIR}/bin/activate"
     ]
   }
