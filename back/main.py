@@ -1,8 +1,8 @@
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
 
-from db.session import close_db, init_db
 from api.endpoints.user import router as user_router
+from db.session import close_db, init_db
+from fastapi import FastAPI
 
 
 @asynccontextmanager
