@@ -7,13 +7,15 @@
     "pnpm@latest"
   ],
   "env": {
-    "VENV_DIR": "back/.venv"
+    "VENV_DIR": "${PWD}/back/.venv",
+    "PYTHON_BIN": "${PWD}/.devbox/nix/profile/default/bin/python3.13"
   },
   "shell": {
     "init_hook": [
-      "cd back",
-      "uv sync",
-      "source .venv/bin/activate"
+      "rm -rf ${VENV_DIR} || true",
+      "uv venv --python ${PYTHON_BIN} ${VENV_DIR}",
+      "cd back && uv sync --python ${VENV_DIR}/bin/python",
+      "source ${VENV_DIR}/bin/activate"
     ]
   }
 }

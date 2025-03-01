@@ -1,0 +1,14 @@
+{
+  "folders": [
+    { "path": ".." }
+  ],
+  "settings": {
+    "terminal.integrated.profiles.osx": {
+      "devshell": {
+        "path": "zsh",
+        "args": ["-c", "devbox shell"]
+      },
+    },
+    "terminal.integrated.defaultProfile.osx": "devshell",
+  }
+}
