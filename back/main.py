@@ -1,13 +1,14 @@
 """FastAPI entry point."""
 
 from database import engine
-from domains.auth import auth_backend, fastapi_users
 from fastapi import FastAPI
-from models.user import User, UserCreate, UserRead, UserUpdate
+from models.user import User
 from pydantic import BaseModel
+from routes.user import include_user_routes
 from sqladmin import Admin, ModelView
 
 app = FastAPI()
+include_user_routes(app)
 admin = Admin(app, engine)
 
 
@@ -19,31 +20,6 @@ class StatusResponse(BaseModel):
 async def read_root() -> StatusResponse:
     """Backend api satus."""
     return {"running": "live"}
-
-
-app.include_router(
-    fastapi_users.get_auth_router(auth_backend), prefix="/auth/jwt", tags=["auth"]
-)
-app.include_router(
-    fastapi_users.get_register_router(UserRead, UserCreate),
-    prefix="/auth",
-    tags=["auth"],
-)
-app.include_router(
-    fastapi_users.get_reset_password_router(),
-    prefix="/auth",
-    tags=["auth"],
-)
-app.include_router(
-    fastapi_users.get_verify_router(UserRead),
-    prefix="/auth",
-    tags=["auth"],
-)
-app.include_router(
-    fastapi_users.get_users_router(UserRead, UserUpdate),
-    prefix="/users",
-    tags=["users"],
-)
 
 
 class UserAdmin(ModelView, model=User):
