@@ -8,16 +8,16 @@ from models.base import Base
 
 
 class User(SQLAlchemyBaseUserTableUUID, Base):
-    pass
+    """User model."""
 
 
 class UserRead(schemas.BaseUser[uuid.UUID]):
-    pass
+    """User read schema."""
 
 
 class UserCreate(schemas.BaseUserCreate):
-    pass
+    """User create schema."""
 
 
 class UserUpdate(schemas.BaseUserUpdate):
-    pass
+    """User update schema."""
