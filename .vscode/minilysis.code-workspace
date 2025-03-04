@@ -17,5 +17,6 @@
     },
     "terminal.integrated.defaultProfile.osx": "devshell",
     "terminal.integrated.defaultProfile.linux": "devshell",
+    "python.analysis.extraPaths": ["./back"]
   }
 }
