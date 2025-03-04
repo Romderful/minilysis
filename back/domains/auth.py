@@ -2,6 +2,7 @@ import uuid
 from typing import Optional
 
 from database import get_user_db
+from dotenv import get_key
 from fastapi import Depends, Request
 from fastapi_users import BaseUserManager, FastAPIUsers, UUIDIDMixin, models
 from fastapi_users.authentication import (
@@ -12,7 +13,7 @@ from fastapi_users.authentication import (
 from fastapi_users.db import SQLAlchemyUserDatabase
 from models.user import User
 
-SECRET = "SECRET"
+SECRET = get_key(".env", "AUTH_SECRET")
 
 
 class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):

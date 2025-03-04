@@ -1,3 +1,4 @@
 .venv
 .devbox
+.env
 __pycache__
