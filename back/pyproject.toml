@@ -9,5 +9,6 @@ dependencies = [
     "asyncpg>=0.30.0",
     "fastapi-users[sqlalchemy]>=14.0.1",
     "fastapi[standard]>=0.115.8",
+    "sqladmin[full]>=0.20.1",
     "sqlalchemy>=2.0.38",
 ]
