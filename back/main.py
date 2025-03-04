@@ -12,7 +12,7 @@ class StatusResponse(BaseModel):
     running: str
 
 
-@app.get("/")
+@app.get("/", tags=["healthcheck"])
 async def read_root() -> StatusResponse:
     """Backend api satus."""
     return {"running": "live"}
