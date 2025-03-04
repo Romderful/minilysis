@@ -1,3 +1,5 @@
+"""FastAPI entry point."""
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -10,4 +12,5 @@ class StatusResponse(BaseModel):
 
 @app.get("/")
 async def read_root() -> StatusResponse:
+    """Backend api satus."""
     return {"running": "live"}
