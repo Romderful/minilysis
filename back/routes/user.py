@@ -1,11 +1,24 @@
 """User routes."""
 
+from database import get_async_session
 from domains.auth import auth_backend, fastapi_users
-from fastapi import FastAPI
-from models.user import UserCreate, UserRead, UserUpdate
+from fastapi import APIRouter, Depends, FastAPI
+from fastapi_pagination import Page
+from fastapi_pagination.ext.sqlalchemy import paginate
+from models.user import User, UserCreate, UserRead, UserUpdate
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+users_router = APIRouter(prefix="/users")
 
 
-def include_user_routes(app: FastAPI):
+@users_router.get(path="", tags=["users"])
+async def get_users(db: AsyncSession = Depends(get_async_session)) -> Page[UserRead]:
+    """Get all users."""
+    return await paginate(db, select(User))
+
+
+def include_auth_routes(app: FastAPI):
     """Include all user-related routers in the app."""
     routes = [
         (fastapi_users.get_auth_router, "/auth/jwt", ["auth"], auth_backend),
