@@ -1,13 +1,8 @@
 <script setup lang="ts">
-import createClient from "openapi-fetch";
-import type { paths } from "./schema";
-
-const client = createClient<paths>({ baseUrl: "http://localhost:8000" });
-
 const status = ref();
 
 const getStatus = async () => {
-  const { data } = await client.GET("/");
+  const { data } = await useClient().GET("/");
   status.value = data;
 };
 </script>
