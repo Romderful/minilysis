@@ -3,7 +3,7 @@ from invoke import task  # type: ignore
 UV_EXEC = "docker compose exec back uv run"
 
 
-@task
+@task(aliases=["m"])
 def migrate(c):
     c.run(f"{UV_EXEC} alembic upgrade head")
 
