@@ -1,4 +1,6 @@
-from invoke import task  # type: ignore
+"""Tasks."""
+
+from invoke import task
 
 COMPOSE = "docker compose"
 EXEC_UV = f"{COMPOSE} exec back uv run"
