@@ -1,2 +1,2 @@
-uv pip install -r pyproject.toml --system
-fastapi dev --host 0.0.0.0
+uv sync
+uv run fastapi dev --host 0.0.0.0

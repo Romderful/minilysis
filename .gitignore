@@ -12,7 +12,7 @@ logs
 .idea
 __pycache__
 .pnpm-store
-.venv
+.venv*
 .env
 .devbox
 .env.*
