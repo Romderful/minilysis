@@ -9,10 +9,5 @@
     "python313Packages.uv":     "latest",
     "python313Packages.invoke": "latest",
     "pnpm":                     "latest"
-  },
-  "shell": {
-    "init_hook": [
-      "uv sync --project ${PWD}/back"
-    ]
   }
 }
