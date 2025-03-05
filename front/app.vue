@@ -8,10 +8,6 @@ const getStatus = async () => {
 </script>
 
 <template>
-  <div>
-    <button @click="getStatus" />
-  </div>
-  <div>
-    <span>{{ status }}</span>
-  </div>
+  <v-btn @click="getStatus" :text="'Fetch status'" />
+  <span>{{ status }}</span>
 </template>
