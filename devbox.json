@@ -1,14 +1,18 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetpack-io/devbox/master/.schema/devbox.schema.json",
   "packages": {
+    "python": {
+      "version": "3.13",
+      "disable_plugin": true
+    },
     "git":                      "latest",
-    "python313":                "latest",
     "python313Packages.uv":     "latest",
     "python313Packages.invoke": "latest",
     "pnpm":                     "latest"
   },
-  "env": {
-    "VENV_DIR": "${PWD}/back/.venv",
-    "UV_PYTHON": "${DEVBOX_PACKAGES_DIR}/bin/python3.13"
+  "shell": {
+    "init_hook": [
+      "uv sync --project back"
+    ]
   }
 }
