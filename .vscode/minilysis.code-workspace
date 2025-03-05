@@ -17,7 +17,6 @@
     },
     "terminal.integrated.defaultProfile.osx": "devshell",
     "terminal.integrated.defaultProfile.linux": "devshell",
-    "python.defaultInterpreterPath": "${workspaceFolder}/back/.venv/bin/python3",
     "python.analysis.extraPaths": ["./back"],
   }
 }

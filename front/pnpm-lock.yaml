@@ -2061,8 +2061,8 @@ packages:
   nanotar@0.2.0:
     resolution: {integrity: sha512-9ca1h0Xjvo9bEkE4UOxgAzLV0jHKe6LMaxo37ND2DAhhAtd0j8pR1Wxz+/goMrZO8AEZTWCmyaOsFI/W5AdpCQ==}
 
-  nitropack@2.11.0:
-    resolution: {integrity: sha512-E8HDHg83qA/qqHUFGAioWE0FQsa8lK6J9CP8L5JfPpGeWBpNj9B5r7mDV68L39DrpNczQQ9h/pjo8Fs6IxaatQ==}
+  nitropack@2.11.1:
+    resolution: {integrity: sha512-CyoM2KGCjwUMgDPL7YtDZdLK1cCYzhaYImPMPcrqWJoMZJ9UgpWiEmP1Yqjw1qNGe1+1u3kj+GNxx75mh9eovg==}
     engines: {node: ^16.11.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
@@ -5292,7 +5292,7 @@ snapshots:
 
   nanotar@0.2.0: {}
 
-  nitropack@2.11.0(typescript@5.8.2):
+  nitropack@2.11.1(typescript@5.8.2):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 3.0.0
@@ -5470,7 +5470,7 @@ snapshots:
       magic-string: 0.30.17
       mlly: 1.7.4
       nanotar: 0.2.0
-      nitropack: 2.11.0(typescript@5.8.2)
+      nitropack: 2.11.1(typescript@5.8.2)
       nypm: 0.5.4
       ofetch: 1.4.1
       ohash: 1.1.6
