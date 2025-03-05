@@ -25,10 +25,10 @@ admin.add_view(UserAdmin)
 
 
 class StatusResponse(BaseModel):
-    running: str
+    status: str
 
 
 @app.get("/", tags=["healthcheck"])
 async def read_root() -> StatusResponse:
     """Backend api satus."""
-    return {"running": "live"}
+    return {"status": "live"}
