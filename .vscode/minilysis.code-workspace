@@ -3,21 +3,6 @@
     { "path": ".." }
   ],
   "settings": {
-    "terminal.integrated.profiles.osx": {
-      "devshell": {
-        "path": "zsh",
-        "args": ["-c", "devbox shell"]
-      },
-    },
-    "terminal.integrated.profiles.linux": {
-      "devshell": {
-        "path": "bash",
-        "args": ["-c", "devbox shell"]
-      },
-    },
-    "terminal.integrated.defaultProfile.osx": "devshell",
-    "terminal.integrated.defaultProfile.linux": "devshell",
-    "python.analysis.extraPaths": ["./back"],
-    "python.defaultInterpreterPath": "./back/.venv/bin/python"
+    "python.analysis.extraPaths": ["./back"]
   }
 }
