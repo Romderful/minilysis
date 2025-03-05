@@ -8,6 +8,7 @@ EXEC_UV = f"{COMPOSE} exec back uv run"
 def build(c):
     c.run(f"{COMPOSE} build")
 
+
 @task(aliases=["u"])
 def up(c):
     c.run(f"{COMPOSE} up -d")
@@ -36,3 +37,16 @@ def make_migrations(c):
 @task(aliases=["bs"])
 def back_shell(c):
     c.run(f"{COMPOSE} exec back sh")
+
+
+@task(aliases=["fs"])
+def front_shell(c):
+    c.run(f"{COMPOSE} exec front sh")
+
+
+@task(aliases=["gs"])
+def generate_schema(c):
+    c.run(
+        f"{COMPOSE} exec front pnpm openapi-typescript "
+        "http://minilysis-back:8000/openapi.json -o ./schema.d.ts"
+    )
