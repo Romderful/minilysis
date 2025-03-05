@@ -14,6 +14,19 @@ services:
     networks:
       - app_network
 
+  front:
+    build: ./front
+    container_name: minilysis-front
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - back
+    volumes:
+      - ./front:/app
+    networks:
+      - app_network
+
   db:
     image: postgres:17.4-alpine
     container_name: minilysis-db

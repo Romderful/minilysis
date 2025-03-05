@@ -4,6 +4,10 @@ COMPOSE = "docker compose"
 EXEC_UV = f"{COMPOSE} exec back uv run"
 
 
+@task(aliases=["b"])
+def build(c):
+    c.run(f"{COMPOSE} build")
+
 @task(aliases=["u"])
 def up(c):
     c.run(f"{COMPOSE} up -d")
@@ -16,7 +20,7 @@ def stop(c):
 
 @task(aliases=["d"])
 def down(c):
-    c.run(f"{COMPOSE} down")
+    c.run(f"{COMPOSE} down -v")
 
 
 @task(aliases=["m"])
